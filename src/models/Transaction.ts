@@ -8,7 +8,7 @@ import {
   JoinColumn,
 } from 'typeorm';
 
-import { Category } from './Category';
+import Category from './Category';
 
 @Entity('transactions')
 class Transaction {
@@ -38,4 +38,4 @@ class Transaction {
   updated_at: Date;
 }
 
-export { Transaction };
+export default Transaction;

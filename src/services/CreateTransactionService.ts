@@ -1,8 +1,8 @@
 import { getCustomRepository } from 'typeorm';
 import AppError from '../errors/AppError';
-import { Transaction } from '../models/Transaction';
-import { TransactionsRepository } from '../repositories/TransactionsRepository';
-import { CategoriesRepository } from '../repositories/CategoriesRepository';
+import Transaction from '../models/Transaction';
+import TransactionsRepository from '../repositories/TransactionsRepository';
+import CategoriesRepository from '../repositories/CategoriesRepository';
 
 interface Request {
   title: string;
@@ -41,4 +41,4 @@ class CreateTransactionService {
   }
 }
 
-export { CreateTransactionService };
+export default CreateTransactionService;

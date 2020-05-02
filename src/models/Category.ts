@@ -21,4 +21,4 @@ class Category {
   updated_at: Date;
 }
 
-export { Category };
+export default Category;
