@@ -6,7 +6,7 @@ import Category from '../models/Category';
 class CategoriesRepository extends Repository<Category> {
   public async findByName(name: string): Promise<Category | null> {
     const findCategory = await this.findOne({
-      where: { name },
+      where: { title: name },
     });
 
     return findCategory || null;

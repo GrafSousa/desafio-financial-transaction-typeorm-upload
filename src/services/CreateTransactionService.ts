@@ -27,18 +27,18 @@ class CreateTransactionService {
       throw new AppError('Outcome value is bigger than balance');
     }
 
-    let categoryByName = await categoryRepository.findByName(category);
+    let transactionCategory = await categoryRepository.findByName(category);
 
-    if (!categoryByName) {
-      categoryByName = categoryRepository.create({ title: category });
-      categoryByName = await categoryRepository.save(categoryByName);
+    if (!transactionCategory) {
+      transactionCategory = categoryRepository.create({ title: category });
+      transactionCategory = await categoryRepository.save(transactionCategory);
     }
 
     const transaction = transactionRepository.create({
       title,
       value,
       type,
-      category_id: categoryByName.id,
+      category_id: transactionCategory.id,
     });
 
     await transactionRepository.save(transaction);
